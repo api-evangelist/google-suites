@@ -1,10 +1,12 @@
+aid: google-suites
 name: Google Workspace APIs
 description: Collection of APIs for Google Workspace (formerly G Suite) services including Gmail, Calendar, Drive, Docs, Sheets, and more
 image: https://workspace.google.com/static/img/logo-workspace.svg
-created: '2024'
-modified: '2024'
-specificationVersion: '0.18'
 url: https://workspace.google.com/
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
 - productivity
 - collaboration
@@ -140,6 +142,5 @@ common:
 - type: SDKs
   url: https://developers.google.com/workspace/guides/client-libraries
 maintainers:
-- name: Google
-  email: workspace-dev@google.com
-  url: https://developers.google.com/workspace
+- FN: Kin Lane
+  email: kin@apievangelist.com
