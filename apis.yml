@@ -147,7 +147,7 @@ common:
     url: https://workspace.google.com/pricing
   - type: Support
     url: https://workspace.google.com/support
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://workspace.google.com/terms
   - type: SDKs
     url: https://developers.google.com/workspace/guides/client-libraries
