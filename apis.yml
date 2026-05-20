@@ -139,6 +139,10 @@ apis:
       - type: Documentation
         url: https://developers.google.com/admin-sdk/directory/reference/rest
 common:
+  - type: GitHubOrganization
+    url: https://github.com/googleworkspace
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/googleworkspace
   - type: Authentication
     url: https://developers.google.com/workspace/guides/auth-overview
   - type: Console
