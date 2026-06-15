@@ -1,0 +1,1619 @@
+{
+  "item": [
+    {
+      "id": "99c3c829-145f-4c32-b3e8-4b14ccf99c57",
+      "name": "Gmail",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b98ade84-4243-4ac7-9c17-beb5daf60583",
+          "name": "Get Gmail user profile",
+          "request": {
+            "name": "Get Gmail user profile",
+            "description": {},
+            "url": {
+              "path": [
+                "gmail",
+                "v1",
+                "users",
+                ":userId",
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "me",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "db8cce1c-41ce-4a37-b156-72f60f7396a3",
+              "name": "Profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gmail",
+                    "v1",
+                    "users",
+                    ":userId",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "me",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34b4753a-3915-45da-a052-ff351a48ce8d",
+          "name": "List Gmail messages",
+          "request": {
+            "name": "List Gmail messages",
+            "description": {},
+            "url": {
+              "path": [
+                "gmail",
+                "v1",
+                "users",
+                ":userId",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6891b386-03c1-454f-9085-6405db9aeec7",
+              "name": "Messages",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gmail",
+                    "v1",
+                    "users",
+                    ":userId",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76efbb70-26a9-4e62-8dcd-d1113882f7f2",
+          "name": "Send a Gmail message",
+          "request": {
+            "name": "Send a Gmail message",
+            "description": {},
+            "url": {
+              "path": [
+                "gmail",
+                "v1",
+                "users",
+                ":userId",
+                "messages",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"threadId\": \"<string>\",\n  \"snippet\": \"<string>\",\n  \"raw\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c75f467b-76f6-42aa-ac74-e60f6d8e2b1b",
+              "name": "Sent",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gmail",
+                    "v1",
+                    "users",
+                    ":userId",
+                    "messages",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"threadId\": \"<string>\",\n  \"snippet\": \"<string>\",\n  \"raw\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f158a293-8aff-4615-87fd-663b0cb946f2",
+          "name": "List Gmail labels",
+          "request": {
+            "name": "List Gmail labels",
+            "description": {},
+            "url": {
+              "path": [
+                "gmail",
+                "v1",
+                "users",
+                ":userId",
+                "labels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6301418a-af8a-4374-920e-d41908eb52f9",
+              "name": "Labels",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gmail",
+                    "v1",
+                    "users",
+                    ":userId",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "110e9393-24f5-4c9b-9ec1-eecdc03161fb",
+      "name": "Calendar",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60a2ee76-aa0b-4a4a-a243-ce1fcc69ec20",
+          "name": "List the user's calendars",
+          "request": {
+            "name": "List the user's calendars",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "calendar",
+                "v3",
+                "users",
+                "me",
+                "calendarList"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ff40fc6-939d-4670-a755-0d5be31af6d7",
+              "name": "CalendarList",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "calendar",
+                    "v3",
+                    "users",
+                    "me",
+                    "calendarList"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6c53eb4-311a-47c5-ab9e-4904eea80c20",
+          "name": "List events in a calendar",
+          "request": {
+            "name": "List events in a calendar",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "calendar",
+                "v3",
+                "calendars",
+                ":calendarId",
+                "events"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "timeMin",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeMax",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "singleEvents",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderBy",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "calendarId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc254b5b-8119-47de-8a83-9b06b272be93",
+              "name": "Events",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "calendar",
+                    "v3",
+                    "calendars",
+                    ":calendarId",
+                    "events"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "timeMin",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "timeMax",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "singleEvents",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "calendarId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55873755-a76b-424b-a79a-9b96513dc044",
+          "name": "Create an event",
+          "request": {
+            "name": "Create an event",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "calendar",
+                "v3",
+                "calendars",
+                ":calendarId",
+                "events"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sendUpdates",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "calendarId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "be12b1a2-468b-4436-ba0b-3eeb65a9f247",
+              "name": "Event",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "calendar",
+                    "v3",
+                    "calendars",
+                    ":calendarId",
+                    "events"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "sendUpdates",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "calendarId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2b6debd-6cbe-4db0-93e4-b9b41bc39a3d",
+          "name": "Get an event",
+          "request": {
+            "name": "Get an event",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "calendar",
+                "v3",
+                "calendars",
+                ":calendarId",
+                "events",
+                ":eventId"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "calendarId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43395870-bbb5-4242-b135-3087a0de5304",
+              "name": "Event",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "calendar",
+                    "v3",
+                    "calendars",
+                    ":calendarId",
+                    "events",
+                    ":eventId"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "calendarId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c98075fa-26bb-4f95-aba6-4c184766ba42",
+          "name": "Patch an event",
+          "request": {
+            "name": "Patch an event",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "calendar",
+                "v3",
+                "calendars",
+                ":calendarId",
+                "events",
+                ":eventId"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "calendarId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5ae52871-a309-4be8-9b1c-a8425b301f05",
+              "name": "Event",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "calendar",
+                    "v3",
+                    "calendars",
+                    ":calendarId",
+                    "events",
+                    ":eventId"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "calendarId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"description\": \"<string>\",\n  \"location\": \"<string>\",\n  \"start\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"end\": {\n    \"dateTime\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  \"attendees\": [\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"responseStatus\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12d9a57e-ba26-497e-bf5d-52d6283068d0",
+          "name": "Delete an event",
+          "request": {
+            "name": "Delete an event",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "calendar",
+                "v3",
+                "calendars",
+                ":calendarId",
+                "events",
+                ":eventId"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "calendarId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "21439f1e-00d4-4c84-87be-442a99032f04",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "calendar",
+                    "v3",
+                    "calendars",
+                    ":calendarId",
+                    "events",
+                    ":eventId"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "calendarId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6300d1fd-4495-405b-b1a2-68fbb98fff8c",
+      "name": "Drive",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "72afbb0c-f3a6-46a6-bc0d-99c96abffde5",
+          "name": "List files",
+          "request": {
+            "name": "List files",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "65466ff4-9c86-43e6-8b6c-2215f99eeac5",
+              "name": "Files",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88be2932-72c3-48b9-8e5a-cc81141e1610",
+          "name": "Create a file (metadata-only)",
+          "request": {
+            "name": "Create a file (metadata-only)",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"parents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webViewLink\": \"<string>\",\n  \"size\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c727ad4b-5957-43ca-a65c-7a22819d53c9",
+              "name": "File",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"parents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webViewLink\": \"<string>\",\n  \"size\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c9656f7-85d4-40e1-8b8c-c096297f7cc8",
+          "name": "Get a file",
+          "request": {
+            "name": "Get a file",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files",
+                ":fileId"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "alt",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2cd81e62-caee-4bbb-82f3-f32ade980253",
+              "name": "File",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "alt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37992484-bf3f-4400-8d8a-5b0f1dd26b69",
+          "name": "Delete a file",
+          "request": {
+            "name": "Delete a file",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files",
+                ":fileId"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8acb6388-6097-4526-b76e-8ef316276f93",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://gmail.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/v2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "60422250-d4ed-452b-a8cb-2eb2c459a8ca",
+    "name": "Google Workspace APIs (Gmail, Calendar, Drive)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Best-effort OpenAPI 3.1 covering the most commonly used REST endpoints for the Gmail API (gmail.googleapis.com), Google Calendar API (calendar.googleapis.com / www.googleapis.com/calendar), and Google Drive API (www.googleapis.com/drive). All services use Google OAuth 2.0.",
+      "type": "text/plain"
+    }
+  }
+}

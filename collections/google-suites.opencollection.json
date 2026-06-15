@@ -1,0 +1,392 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Workspace APIs (Gmail, Calendar, Drive)",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gmail",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Gmail user profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/profile",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Gmail user profile"
+        },
+        {
+          "info": {
+            "name": "List Gmail messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/messages",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Gmail messages"
+        },
+        {
+          "info": {
+            "name": "Send a Gmail message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/messages/send",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a Gmail message"
+        },
+        {
+          "info": {
+            "name": "List Gmail labels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/labels",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Gmail labels"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Calendar",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the user's calendars",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/calendar/v3/users/me/calendarList",
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the user's calendars"
+        },
+        {
+          "info": {
+            "name": "List events in a calendar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/calendar/v3/calendars/:calendarId/events",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "timeMin",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeMax",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "singleEvents",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List events in a calendar"
+        },
+        {
+          "info": {
+            "name": "Create an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://gmail.googleapis.com/calendar/v3/calendars/:calendarId/events",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sendUpdates",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an event"
+        },
+        {
+          "info": {
+            "name": "Get an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/calendar/v3/calendars/:calendarId/events/:eventId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an event"
+        },
+        {
+          "info": {
+            "name": "Patch an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://gmail.googleapis.com/calendar/v3/calendars/:calendarId/events/:eventId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Patch an event"
+        },
+        {
+          "info": {
+            "name": "Delete an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://gmail.googleapis.com/calendar/v3/calendars/:calendarId/events/:eventId",
+            "params": [
+              {
+                "name": "calendarId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an event"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Drive",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/drive/v3/files",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List files"
+        },
+        {
+          "info": {
+            "name": "Create a file (metadata-only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://gmail.googleapis.com/drive/v3/files",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a file (metadata-only)"
+        },
+        {
+          "info": {
+            "name": "Get a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/drive/v3/files/:fileId",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alt",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a file"
+        },
+        {
+          "info": {
+            "name": "Delete a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://gmail.googleapis.com/drive/v3/files/:fileId",
+            "params": [
+              {
+                "name": "fileId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
