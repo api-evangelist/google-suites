@@ -47,7 +47,7 @@ apis:
         url: https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest
       - type: Documentation
         url: https://developers.google.com/calendar/api/guides/overview
-      - type: Quickstart
+      - type: GettingStarted
         url: https://developers.google.com/calendar/api/quickstart
   - name: Google Drive API
     description: >-
@@ -96,7 +96,7 @@ apis:
         url: https://sheets.googleapis.com/$discovery/rest?version=v4
       - type: Documentation
         url: https://developers.google.com/sheets/api/guides/concepts
-      - type: Quickstart
+      - type: GettingStarted
         url: https://developers.google.com/sheets/api/quickstart
   - name: Google Slides API
     description: >-
