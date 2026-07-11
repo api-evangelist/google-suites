@@ -1,0 +1,47 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/google-suites-openapi.yml
+schemes:
+- name: googleOAuth
+  source: openapi/google-suites-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+    tokenUrl: https://oauth2.googleapis.com/token
+scopes:
+- scope: https://www.googleapis.com/auth/calendar
+  description: Calendar full access
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/google-suites-openapi.yml
+- scope: https://www.googleapis.com/auth/calendar.events
+  description: Calendar events
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/google-suites-openapi.yml
+- scope: https://www.googleapis.com/auth/drive
+  description: Drive full access
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/google-suites-openapi.yml
+- scope: https://www.googleapis.com/auth/drive.file
+  description: Drive per-file access
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/google-suites-openapi.yml
+- scope: https://www.googleapis.com/auth/gmail.modify
+  description: Gmail read/write
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/google-suites-openapi.yml
+- scope: https://www.googleapis.com/auth/gmail.send
+  description: Gmail send
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/google-suites-openapi.yml
