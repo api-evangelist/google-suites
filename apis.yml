@@ -139,6 +139,12 @@ apis:
       - type: Documentation
         url: https://developers.google.com/admin-sdk/directory/reference/rest
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-suites-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-suites-domain-security.yml
+  - type: Authentication
+    url: authentication/google-suites-authentication.yml
   - type: OAuthScopes
     url: scopes/google-suites-scopes.yml
   - type: GitHubOrganization
