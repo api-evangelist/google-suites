@@ -139,6 +139,8 @@ apis:
       - type: Documentation
         url: https://developers.google.com/admin-sdk/directory/reference/rest
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-suites-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-suites-vulnerability-disclosure.yml
   - type: DomainSecurity

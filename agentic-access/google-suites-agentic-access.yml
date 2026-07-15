@@ -1,0 +1,195 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/google-suites-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 14
+  by_action_class:
+    connected: 8
+    acting: 6
+  by_consequence:
+    read: 8
+    physical: 1
+    write: 5
+  human_in_the_loop_required: 0
+operations:
+- path: /gmail/v1/users/{userId}/profile
+  method: get
+  operationId: gmail.users.getProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /gmail/v1/users/{userId}/messages
+  method: get
+  operationId: gmail.users.messages.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /gmail/v1/users/{userId}/messages/send
+  method: post
+  operationId: gmail.users.messages.send
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /gmail/v1/users/{userId}/labels
+  method: get
+  operationId: gmail.users.labels.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /calendar/v3/users/me/calendarList
+  method: get
+  operationId: calendar.calendarList.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /calendar/v3/calendars/{calendarId}/events
+  method: get
+  operationId: calendar.events.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /calendar/v3/calendars/{calendarId}/events
+  method: post
+  operationId: calendar.events.insert
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /calendar/v3/calendars/{calendarId}/events/{eventId}
+  method: get
+  operationId: calendar.events.get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /calendar/v3/calendars/{calendarId}/events/{eventId}
+  method: patch
+  operationId: calendar.events.patch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /calendar/v3/calendars/{calendarId}/events/{eventId}
+  method: delete
+  operationId: calendar.events.delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /drive/v3/files
+  method: get
+  operationId: drive.files.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drive/v3/files
+  method: post
+  operationId: drive.files.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /drive/v3/files/{fileId}
+  method: get
+  operationId: drive.files.get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /drive/v3/files/{fileId}
+  method: delete
+  operationId: drive.files.delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
