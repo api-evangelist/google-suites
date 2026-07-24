@@ -1,0 +1,121 @@
+openapi: 3.1.0
+info:
+  title: Google Workspace APIs (, , Drive) Calendar Gmail API
+  description: Best-effort OpenAPI 3.1 covering the most commonly used REST endpoints for the Gmail API (gmail.googleapis.com), Google Calendar API (calendar.googleapis.com / www.googleapis.com/calendar), and Google Drive API (www.googleapis.com/drive). All services use Google OAuth 2.0.
+  version: v1
+servers:
+- url: https://gmail.googleapis.com
+  description: Gmail API
+- url: https://www.googleapis.com
+  description: Calendar / Drive API host
+security:
+- googleOAuth: []
+tags:
+- name: Gmail
+paths:
+  /gmail/v1/users/{userId}/profile:
+    get:
+      tags:
+      - Gmail
+      summary: Get Gmail user profile
+      operationId: gmail.users.getProfile
+      parameters:
+      - in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+          default: me
+      responses:
+        '200':
+          description: Profile
+  /gmail/v1/users/{userId}/messages:
+    get:
+      tags:
+      - Gmail
+      summary: List Gmail messages
+      operationId: gmail.users.messages.list
+      parameters:
+      - in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: q
+        schema:
+          type: string
+      - in: query
+        name: maxResults
+        schema:
+          type: integer
+      - in: query
+        name: pageToken
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Messages
+  /gmail/v1/users/{userId}/messages/send:
+    post:
+      tags:
+      - Gmail
+      summary: Send a Gmail message
+      operationId: gmail.users.messages.send
+      parameters:
+      - in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Message'
+      responses:
+        '200':
+          description: Sent
+  /gmail/v1/users/{userId}/labels:
+    get:
+      tags:
+      - Gmail
+      summary: List Gmail labels
+      operationId: gmail.users.labels.list
+      parameters:
+      - in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Labels
+components:
+  schemas:
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+        threadId:
+          type: string
+        snippet:
+          type: string
+        raw:
+          type: string
+  securitySchemes:
+    googleOAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/gmail.modify: Gmail read/write
+            https://www.googleapis.com/auth/gmail.send: Gmail send
+            https://www.googleapis.com/auth/calendar: Calendar full access
+            https://www.googleapis.com/auth/calendar.events: Calendar events
+            https://www.googleapis.com/auth/drive: Drive full access
+            https://www.googleapis.com/auth/drive.file: Drive per-file access

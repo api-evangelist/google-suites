@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: Google Workspace APIs (Gmail, , ) Calendar Drive API
+  description: Best-effort OpenAPI 3.1 covering the most commonly used REST endpoints for the Gmail API (gmail.googleapis.com), Google Calendar API (calendar.googleapis.com / www.googleapis.com/calendar), and Google Drive API (www.googleapis.com/drive). All services use Google OAuth 2.0.
+  version: v1
+servers:
+- url: https://gmail.googleapis.com
+  description: Gmail API
+- url: https://www.googleapis.com
+  description: Calendar / Drive API host
+security:
+- googleOAuth: []
+tags:
+- name: Drive
+paths:
+  /drive/v3/files:
+    get:
+      tags:
+      - Drive
+      summary: List files
+      operationId: drive.files.list
+      servers:
+      - url: https://www.googleapis.com
+      parameters:
+      - in: query
+        name: q
+        schema:
+          type: string
+      - in: query
+        name: pageSize
+        schema:
+          type: integer
+      - in: query
+        name: pageToken
+        schema:
+          type: string
+      - in: query
+        name: fields
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Files
+    post:
+      tags:
+      - Drive
+      summary: Create a file (metadata-only)
+      operationId: drive.files.create
+      servers:
+      - url: https://www.googleapis.com
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File'
+      responses:
+        '200':
+          description: File
+  /drive/v3/files/{fileId}:
+    get:
+      tags:
+      - Drive
+      summary: Get a file
+      operationId: drive.files.get
+      servers:
+      - url: https://www.googleapis.com
+      parameters:
+      - in: path
+        name: fileId
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: alt
+        schema:
+          type: string
+          enum:
+          - json
+          - media
+      - in: query
+        name: fields
+        schema:
+          type: string
+      responses:
+        '200':
+          description: File
+    delete:
+      tags:
+      - Drive
+      summary: Delete a file
+      operationId: drive.files.delete
+      servers:
+      - url: https://www.googleapis.com
+      parameters:
+      - in: path
+        name: fileId
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+components:
+  schemas:
+    File:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        mimeType:
+          type: string
+        parents:
+          type: array
+          items:
+            type: string
+        webViewLink:
+          type: string
+        size:
+          type: string
+  securitySchemes:
+    googleOAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/v2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/gmail.modify: Gmail read/write
+            https://www.googleapis.com/auth/gmail.send: Gmail send
+            https://www.googleapis.com/auth/calendar: Calendar full access
+            https://www.googleapis.com/auth/calendar.events: Calendar events
+            https://www.googleapis.com/auth/drive: Drive full access
+            https://www.googleapis.com/auth/drive.file: Drive per-file access
