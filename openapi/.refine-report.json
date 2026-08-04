@@ -1,0 +1,18 @@
+{
+  "provider": "google-suites",
+  "sources": [
+    "google-suites-calendar-api-openapi.yml",
+    "google-suites-drive-api-openapi.yml",
+    "google-suites-gmail-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-suites-calendar-api-openapi.yml",
+    "google-suites-drive-api-openapi.yml",
+    "google-suites-gmail-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
