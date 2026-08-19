@@ -20,7 +20,7 @@ image: https://workspace.google.com/static/img/logo-workspace.svg
 url: https://workspace.google.com/
 created: '2024-01-01'
 modified: '2026-04-28'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 type: Index
 tags:
   - Cloud Storage
