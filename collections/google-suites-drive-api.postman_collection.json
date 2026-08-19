@@ -1,0 +1,470 @@
+{
+  "item": [
+    {
+      "id": "f0329e76-d8d4-4de4-8f53-dca657b93e27",
+      "name": "Drive",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ecb6e796-c875-4665-93a8-3c2ac7188ec0",
+          "name": "List files",
+          "request": {
+            "name": "List files",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "552be692-2d94-4e23-916f-1f2d304c3dd3",
+              "name": "Files",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd274ca8-dfdf-4e46-a457-d59941250682",
+          "name": "Create a file (metadata-only)",
+          "request": {
+            "name": "Create a file (metadata-only)",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"parents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webViewLink\": \"<string>\",\n  \"size\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c4c642e1-823b-4256-902d-c90473027738",
+              "name": "File",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"parents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"webViewLink\": \"<string>\",\n  \"size\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36414bea-6740-4c74-a7cc-f65b3e74d9fa",
+          "name": "Get a file",
+          "request": {
+            "name": "Get a file",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files",
+                ":fileId"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "alt",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "878a8e4f-ae89-43af-82d3-7739271786d1",
+              "name": "File",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "alt",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3560260-16f8-442e-9e11-a8770df69592",
+          "name": "Delete a file",
+          "request": {
+            "name": "Delete a file",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "drive",
+                "v3",
+                "files",
+                ":fileId"
+              ],
+              "host": [
+                "www",
+                "googleapis",
+                "com"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68e96b65-c500-4c6d-b23a-2914d3a1d5c6",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "drive",
+                    "v3",
+                    "files",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "www",
+                    "googleapis",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://gmail.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/v2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "49361227-ff5f-455e-b3f7-71a90b8040ff",
+    "name": "Google Workspace APIs (Gmail, , ) Calendar Drive API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Best-effort OpenAPI 3.1 covering the most commonly used REST endpoints for the Gmail API (gmail.googleapis.com), Google Calendar API (calendar.googleapis.com / www.googleapis.com/calendar), and Google Drive API (www.googleapis.com/drive). All services use Google OAuth 2.0.",
+      "type": "text/plain"
+    }
+  }
+}

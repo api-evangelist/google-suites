@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Workspace APIs (, , Drive) Calendar Gmail API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gmail",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Gmail user profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/profile",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Gmail user profile"
+        },
+        {
+          "info": {
+            "name": "List Gmail messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/messages",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Gmail messages"
+        },
+        {
+          "info": {
+            "name": "Send a Gmail message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/messages/send",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a Gmail message"
+        },
+        {
+          "info": {
+            "name": "List Gmail labels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://gmail.googleapis.com/gmail/v1/users/:userId/labels",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Gmail labels"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
