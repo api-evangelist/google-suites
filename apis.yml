@@ -80,6 +80,8 @@ apis:
   humanURL: https://developers.google.com/gmail/api
   baseURL: https://gmail.googleapis.com
   tags:
+  - Drives
+  tags_raw:
   - Drive
   properties:
   - type: OpenAPI
