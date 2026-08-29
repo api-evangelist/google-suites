@@ -3,6 +3,18 @@ name: Google Workspace APIs
 description: >-
   Collection of APIs for Google Workspace (formerly G Suite) services including Gmail,
   Calendar, Drive, Docs, Sheets, and more.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
