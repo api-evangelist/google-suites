@@ -76,7 +76,7 @@ apis:
     url: https://workspace.google.com/pricing
   - type: Documentation
     url: https://developers.google.com/docs/api/how-tos/overview
-  - type: Samples
+  - type: Examples
     url: https://developers.google.com/docs/api/samples
   - type: Documentation
     url: https://developers.google.com/sheets/api/guides/concepts
@@ -112,7 +112,7 @@ apis:
     url: https://workspace.google.com/pricing
   - type: Documentation
     url: https://developers.google.com/docs/api/how-tos/overview
-  - type: Samples
+  - type: Examples
     url: https://developers.google.com/docs/api/samples
   - type: Documentation
     url: https://developers.google.com/sheets/api/guides/concepts
@@ -146,7 +146,7 @@ apis:
     url: https://workspace.google.com/pricing
   - type: Documentation
     url: https://developers.google.com/docs/api/how-tos/overview
-  - type: Samples
+  - type: Examples
     url: https://developers.google.com/docs/api/samples
   - type: Documentation
     url: https://developers.google.com/sheets/api/guides/concepts
