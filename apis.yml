@@ -92,7 +92,7 @@ apis:
   humanURL: https://developers.google.com/gmail/api
   baseURL: https://gmail.googleapis.com
   tags:
-  - Drive
+  - Drives
   tags_raw:
   - Drive
   properties:
